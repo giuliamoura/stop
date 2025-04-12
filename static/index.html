@@ -11,11 +11,56 @@
 </head>
 
 <body>
+    <div id="header">
+        <button id="settings-button">
+            Configurações
+        </button>
+        <div id="clock">
+            <span id="clock-span">00:00</span>
+        </div>
+        <button id="mode-button">
+            Modo Competitivo
+        </button>
+    </div>
     <div id="up">
         <span> A categoria sorteada é:</span>
     </div>
     <div id="category">
         <span id="category-span">Sorteando...</span>
+    </div>
+    <div id="keyboard">
+        <div class="keyboard-row">
+            <span class="key" id="key-Q">Q</span>
+            <span class="key" id="key-W">W</span>
+            <span class="key" id="key-E">E</span>
+            <span class="key" id="key-R">R</span>
+            <span class="key" id="key-T">T</span>
+            <span class="key" id="key-Y">Y</span>
+            <span class="key" id="key-U">U</span>
+            <span class="key" id="key-I">I</span>
+            <span class="key" id="key-O">O</span>
+            <span class="key" id="key-P">P</span>
+        </div>
+        <div class="keyboard-row">
+            <span class="key" id="key-A">A</span>
+            <span class="key" id="key-S">S</span>
+            <span class="key" id="key-D">D</span>
+            <span class="key" id="key-F">F</span>
+            <span class="key" id="key-G">G</span>
+            <span class="key" id="key-H">H</span>
+            <span class="key" id="key-J">J</span>
+            <span class="key" id="key-K">K</span>
+            <span class="key" id="key-L">L</span>
+        </div>
+        <div class="keyboard-row">
+            <span class="key" id="key-Z">Z</span>
+            <span class="key" id="key-X">X</span>
+            <span class="key" id="key-C">C</span>
+            <span class="key" id="key-V">V</span>
+            <span class="key" id="key-B">B</span>
+            <span class="key" id="key-N">N</span>
+            <span class="key" id="key-M">M</span>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
@@ -23,7 +68,22 @@
     // when pressing a key, alert the key pressed
     document.addEventListener('keydown', function (event) {
         if (event.key >= 'a' && event.key <= 'z') {
-            alert('You pressed ' + event.key);
+            k = event.key.toUpperCase();
+            document.getElementById("key-" + k).style.border = "4px solid lightgrey";
+            document.getElementById("key-" + k).style.color = "lightgrey";
+        }
+    });
+
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('key')) {
+            k = event.target.id.split('-')[1];
+            if (document.getElementById("key-" + k).style.border == "4px solid lightgrey") {
+                document.getElementById("key-" + k).style.border = "4px solid black";
+                document.getElementById("key-" + k).style.color = "black";
+            } else {
+                document.getElementById("key-" + k).style.border = "4px solid lightgrey";
+                document.getElementById("key-" + k).style.color = "lightgrey";
+            }
         }
     });
 

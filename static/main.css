@@ -3,11 +3,20 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 1rem;
+    box-sizing: border-box;
 
     font-family: "Englebert", cursive;
     font-weight: 400;
     font-style: normal;
     font-size: 1.5rem;    
+}
+
+#header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: centers;
+    justify-content: space-between;
 }
 
 #up {
@@ -16,12 +25,13 @@ html, body {
     flex-direction: row;
     align-items: centers;
     justify-content: start;
+    margin-top: 1rem;
 }
 
 #category {
     width: 100%;
     margin-top: 1rem;
-    height: 1rem;
+    height: 10rem;
     display: flex;
     flex-direction: row;
     align-items: centers;
@@ -30,4 +40,41 @@ html, body {
     font-size: 4rem;
     color:cornflowerblue;
 }
+
+button, .key {
+    color: black;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border: 4px solid black;
+    background-color: white;
+}
+
+#clock {
+    font-size: 2rem;
+}
+
+.key {
+    width: 3rem;
+    height: 2.8rem;
+    padding: 0;
+    margin-top: .5rem;
+    line-height: 2.7rem;
+    text-align: center;
+    vertical-align: middle;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.keyboard-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 
