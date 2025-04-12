@@ -26,6 +26,10 @@
             alert('You pressed ' + event.key);
         }
     });
+
+    categories = ["Filme", "Animais", "Bandas", "Séries", "Marcas", "Remédios", "Lugares (genéricos)", "Países", "Frutas", "Esportes", "Objetos", "Profissões", "Cores", "Países", "Frutas", "Esportes"];
+
+    document.getElementById("category-span").innerHTML = categories[Math.floor(Math.random() * categories.length)];
 </script>
 
 </html>
