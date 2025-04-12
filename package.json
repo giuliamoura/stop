@@ -1,0 +1,19 @@
+{
+  "name": "stop",
+  "version": "1.0.0",
+  "description": "jogo de stop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giuliamoura/stop.git"
+  },
+  "author": "lucasturci,giuliamoura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giuliamoura/stop/issues"
+  },
+  "homepage": "https://github.com/giuliamoura/stop#readme"
+}
