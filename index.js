@@ -4,10 +4,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    // return a static html file
-    res.sendFile(__dirname + '/static/index.html');
-});
+app.use(express.static('static'));
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
