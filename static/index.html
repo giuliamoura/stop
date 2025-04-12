@@ -12,7 +12,9 @@
 <script>
     // when pressing a key, alert the key pressed
     document.addEventListener('keydown', function (event) {
-        alert('You pressed ' + event.key);
+        if (event.key >= 'a' && event.key <= 'z') {
+            alert('You pressed ' + event.key);
+        }
     });
 </script>
 
