@@ -24,9 +24,10 @@
     </div>
     <div id="up">
         <span> A categoria sorteada é:</span>
+        <button onclick="sortearCategoria()"> Sortear Categoria </button>
     </div>
     <div id="category">
-        <span id="category-span">Sorteando...</span>
+        <span id="category-span">Pressione S para começar...</span>
     </div>
     <div id="keyboard">
         <div class="keyboard-row">
@@ -67,6 +68,14 @@
 <script>
     // when pressing a key, alert the key pressed
     document.addEventListener('keydown', function (event) {
+        if (!start) {
+            if (event.key == 's') {
+                start = true;
+                sortearCategoria();
+                // do more stuff here;
+            }
+            return;
+        }
         if (event.key >= 'a' && event.key <= 'z') {
             k = event.key.toUpperCase();
             document.getElementById("key-" + k).style.border = "4px solid lightgrey";
@@ -75,6 +84,9 @@
     });
 
     document.addEventListener('click', function (event) {
+        if (!start) {
+            return;
+        }
         if (event.target.classList.contains('key')) {
             k = event.target.id.split('-')[1];
             if (document.getElementById("key-" + k).style.border == "4px solid lightgrey") {
@@ -89,7 +101,21 @@
 
     categories = ["Filme", "Animais", "Bandas", "Séries", "Marcas", "Remédios", "Lugares (genéricos)", "Países", "Frutas", "Esportes", "Objetos", "Profissões", "Cores", "Países", "Frutas", "Esportes"];
 
-    document.getElementById("category-span").innerHTML = categories[Math.floor(Math.random() * categories.length)];
+    let start = false;
+    function sortearCategoria() {
+        // comecar timer
+        let timer = 60 * 10;
+        let timerElement = document.getElementById("clock-span");
+        timerElement.innerHTML = new Date(timer * 1000).toISOString().substr(14, 5);
+        let timerInterval = setInterval(() => {
+            timer--;
+            timerElement.innerHTML = new Date(timer * 1000).toISOString().substr(14, 5);
+            if (timer <= 0) {
+                alert("Acabou o tempo!");
+            }
+        }, 1000);
+        document.getElementById("category-span").innerHTML = categories[Math.floor(Math.random() * categories.length)];
+    }
 </script>
 
 </html>
